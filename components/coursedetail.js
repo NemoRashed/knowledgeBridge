@@ -5,6 +5,7 @@ import { useUser } from "@clerk/nextjs";
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import Girl from "../asset/testimonial/girl.jpg";
 import {
   Accordion,
   AccordionContent,
@@ -45,6 +46,8 @@ export default function CourseDetail() {
     expirationDate: "",
     cvv: "",
   });
+  const [isEvcFormOpen, setIsEvcFormOpen] = useState(false);
+  const [isSahalFormOpen, setIsSahalFormOpen] = useState(false);
 
   const router = useRouter();
   const { isLoaded, isSignedIn, user } = useUser();
@@ -125,6 +128,10 @@ export default function CourseDetail() {
       setIsEdahabFormOpen(true);
     } else if (method === "Mastercard") {
       setIsMastercardFormOpen(true);
+    } else if (method === "EVC") {
+      setIsEvcFormOpen(true);
+    } else if (method === "SAHAL") {
+      setIsSahalFormOpen(true);
     } else {
       console.log(`Selected payment method: ${method}`);
     }
@@ -141,6 +148,8 @@ export default function CourseDetail() {
     setIsZaadFormOpen(false);
     setIsEdahabFormOpen(false);
     setIsMastercardFormOpen(false);
+    setIsEvcFormOpen(false);
+    setIsSahalFormOpen(false);
     // Handle form submission logic here
   };
 
@@ -159,7 +168,7 @@ export default function CourseDetail() {
               </h1>
               <div className="flex items-center space-x-4">
                 <Image
-                  src="/placeholder.svg?height=50&width=50"
+                  src={Girl}
                   alt={course.instructor}
                   width={50}
                   height={50}
@@ -317,6 +326,12 @@ export default function CourseDetail() {
                   >
                     Mastercard Payment
                   </Button>
+                  <Button onClick={() => handlePaymentMethodSelect("EVC")}>
+                    EVC Payment
+                  </Button>
+                  <Button onClick={() => handlePaymentMethodSelect("SAHAL")}>
+                    SAHAL Payment
+                  </Button>
                 </div>
               </DialogContent>
             </Dialog>
@@ -473,6 +488,114 @@ export default function CourseDetail() {
                         required
                       />
                     </div>
+                  </div>
+                  <Button type="submit">Submit</Button>
+                </form>
+              </DialogContent>
+            </Dialog>
+
+            <Dialog open={isEvcFormOpen} onOpenChange={setIsEvcFormOpen}>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>EVC Payment</DialogTitle>
+                </DialogHeader>
+                <form
+                  onSubmit={(e) => handleFormSubmit(e, "EVC")}
+                  className="space-y-4"
+                >
+                  <div>
+                    <Label htmlFor="fullName">Full Name</Label>
+                    <Input
+                      id="fullName"
+                      name="fullName"
+                      value={paymentForm.fullName}
+                      onChange={handleFormChange}
+                      required
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="number">Number</Label>
+                    <Input
+                      id="number"
+                      name="number"
+                      value={paymentForm.number}
+                      onChange={handleFormChange}
+                      required
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="price">Price</Label>
+                    <Input
+                      id="price"
+                      name="price"
+                      value={paymentForm.price}
+                      onChange={handleFormChange}
+                      required
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="dollar">Dollar</Label>
+                    <Input
+                      id="dollar"
+                      name="dollar"
+                      value={paymentForm.dollar}
+                      onChange={handleFormChange}
+                      required
+                    />
+                  </div>
+                  <Button type="submit">Submit</Button>
+                </form>
+              </DialogContent>
+            </Dialog>
+
+            <Dialog open={isSahalFormOpen} onOpenChange={setIsSahalFormOpen}>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>SAHAL Payment</DialogTitle>
+                </DialogHeader>
+                <form
+                  onSubmit={(e) => handleFormSubmit(e, "SAHAL")}
+                  className="space-y-4"
+                >
+                  <div>
+                    <Label htmlFor="fullName">Full Name</Label>
+                    <Input
+                      id="fullName"
+                      name="fullName"
+                      value={paymentForm.fullName}
+                      onChange={handleFormChange}
+                      required
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="number">Number</Label>
+                    <Input
+                      id="number"
+                      name="number"
+                      value={paymentForm.number}
+                      onChange={handleFormChange}
+                      required
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="price">Price</Label>
+                    <Input
+                      id="price"
+                      name="price"
+                      value={paymentForm.price}
+                      onChange={handleFormChange}
+                      required
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="dollar">Dollar</Label>
+                    <Input
+                      id="dollar"
+                      name="dollar"
+                      value={paymentForm.dollar}
+                      onChange={handleFormChange}
+                      required
+                    />
                   </div>
                   <Button type="submit">Submit</Button>
                 </form>

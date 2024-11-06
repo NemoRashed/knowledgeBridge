@@ -29,9 +29,17 @@ export default function Layout({ children }) {
       href: "/instructor/coursemangement",
       icon: <MdSchool />,
     },
-    { label: "All students", href: "/studentlist", icon: <MdMenuBook /> },
-    { label: "Payments", href: "/payment", icon: <MdQuiz /> },
-    { label: "Blog", href: "/blog", icon: <MdQuiz /> },
+    {
+      label: "Student List",
+      href: "/instructor/studentlist",
+      icon: <MdMenuBook />,
+    },
+    {
+      label: "Payments",
+      href: "/instructor/payments",
+      icon: <MdQuiz />,
+    },
+    { label: "Blog", href: "/instructor/blog", icon: <MdQuiz /> },
   ];
 
   const handleLogout = () => {

@@ -29,7 +29,6 @@ export default function Layout({ children }) {
     { label: "Dashboard", href: "/student", icon: <MdDashboard /> },
     { label: "My Courses", href: "/student/mycourses", icon: <MdSchool /> },
     { label: "E-Books", href: "/student/ebooks", icon: <MdMenuBook /> },
-    { label: "Quiz", href: "/student/quiz", icon: <MdQuiz /> },
   ];
 
   const handleLogout = () => {
