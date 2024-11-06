@@ -15,8 +15,8 @@
 
 Here's a preview of Knowledge Bridge:
 
-![Knowledge Bridge Demo 1](https://github.com/user-attachments/assets/632b05b6-7d0d-4f46-a9f2-baf0016d8bdf)
 ![Knowledge Bridge Demo 2](https://github.com/user-attachments/assets/2006fef6-69e8-4e87-ab68-3b71a069aeba)
+![Knowledge Bridge Demo 1](https://github.com/user-attachments/assets/632b05b6-7d0d-4f46-a9f2-baf0016d8bdf)
 ![Knowledge Bridge Demo 3](https://github.com/user-attachments/assets/d85b66cb-ad2d-4411-912c-9b5ac7d1c214)
 
 ---
@@ -55,6 +55,6 @@ Here's a preview of Knowledge Bridge:
 - **Frontend**: Next.js 
 - **Backend**: Next.js API routes
 - **Styling**: Tailwind CSS
-- **Database**: ( MongoDB, or )
+- **Database**: ( MongoDB )
   
 --- 
