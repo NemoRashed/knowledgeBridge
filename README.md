@@ -31,7 +31,7 @@ Here's a preview of Knowledge Bridge:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/knowledge-bridge.git
+   git clone https://github.com/NemoRashed/knowledge-bridge.git
    ```
 
 2. **Navigate to the project directory:**
