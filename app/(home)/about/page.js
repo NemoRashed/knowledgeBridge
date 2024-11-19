@@ -77,6 +77,7 @@ export default function page() {
           </Card>
 
           {/* Values Section */}
+          {/* Values Section */}
           <Card className="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg border shadow-xl">
             <CardContent className="p-6 md:p-8">
               <h2 className="text-2xl font-semibold mb-6 text-center text-black">
